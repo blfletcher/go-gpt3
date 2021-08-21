@@ -15,6 +15,7 @@ type AnswerRequest struct {
 	Model           string     `json:"model"`
 	ExamplesContext string     `json:"examples_context"`
 	Examples        [][]string `json:"examples"`
+	MaxRerank       *int       `json:"max_rerank,omitempty"`
 	MaxTokens       int        `json:"max_tokens"`
 	ReturnMetadata  *bool      `json:"return_metadata,omitempty"`
 	Stop            []string   `json:"stop"`
