@@ -28,8 +28,10 @@ type AnswerResponse struct {
 	Object            string   `json:"object"`
 	SearchModel       string   `json:"search_model"`
 	SelectedDocuments []struct {
-		Document int    `json:"document"`
-		Text     string `json:"text"`
+		Document int     `json:"document"`
+		Metadata *string `json:"metadata,omitempty"`
+		Score    float64 `json:"score"`
+		Text     string  `json:"text"`
 	} `json:"selected_documents"`
 }
 
