@@ -8,17 +8,21 @@ import (
 )
 
 type AnswerRequest struct {
-	Documents       []string   `json:"documents"`
-	File            string     `json:"file"`
-	Question        string     `json:"question"`
-	SearchModel     string     `json:"search_model"`
-	Model           string     `json:"model"`
-	ExamplesContext string     `json:"examples_context"`
+	Documents       []*string  `json:"documents,omitempty"`
 	Examples        [][]string `json:"examples"`
+	ExamplesContext string     `json:"examples_context"`
+	Expand          *bool      `json:"expand,omitempty"`
+	File            *string    `json:"file,omitempty"`
+	LogProbs        *int       `json:"logprobs,omitempty"`
 	MaxRerank       *int       `json:"max_rerank,omitempty"`
-	MaxTokens       int        `json:"max_tokens"`
+	MaxTokens       *int       `json:"max_tokens,omitempty"`
+	Model           string     `json:"model"`
+	N               *int       `json:"n,omitempty"`
+	Question        string     `json:"question"`
 	ReturnMetadata  *bool      `json:"return_metadata,omitempty"`
-	Stop            []string   `json:"stop"`
+	ReturnPrompt    *bool      `json:"return_prompt,omitempty"`
+	SearchModel     *string    `json:"search_model,omitempty"`
+	Stop            []*string  `json:"stop,omitempty"`
 	Temperature     *float64   `json:"temperature,omitempty"`
 }
 
