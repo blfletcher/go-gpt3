@@ -31,6 +31,7 @@ type AnswerResponse struct {
 	Completion        string   `json:"completion"`
 	Model             string   `json:"model"`
 	Object            string   `json:"object"`
+	Prompt            *string  `json:"prompt,omitempty"`
 	SearchModel       string   `json:"search_model"`
 	SelectedDocuments []struct {
 		Document int     `json:"document"`
