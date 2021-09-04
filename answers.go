@@ -24,6 +24,7 @@ type AnswerRequest struct {
 	SearchModel     *string    `json:"search_model,omitempty"`
 	Stop            []*string  `json:"stop,omitempty"`
 	Temperature     *float64   `json:"temperature,omitempty"`
+	UserID          *string    `json:"user,omitempty"`
 }
 
 type AnswerResponse struct {

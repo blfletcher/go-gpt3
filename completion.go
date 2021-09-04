@@ -28,6 +28,7 @@ type CompletionRequest struct {
 	PresencePenalty  float32 `json:"presence_penalty,omitempty"`
 	FrequencyPenalty float32 `json:"frequency_penalty,omitempty"`
 	BestOf           int     `json:"best_of,omitempty"`
+	UserID           *string `json:"user,omitempty"`
 }
 
 // Choice represents one of possible completions
