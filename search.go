@@ -10,14 +10,21 @@ import (
 
 // SearchRequest represents a request structure for search API
 type SearchRequest struct {
-	Documents []string `json:"documents"`
-	Query     string   `json:"query"`
+	Documents      []*string `json:"documents,omitempty"`
+	File           *string   `json:"file,omitempty"`
+	MaxRerank      *int      `json:"max_rerank,omitempty"`
+	Query          string    `json:"query"`
+	ReturnMetadata *bool     `json:"return_metadata,omitempty"`
+	UserID         *string   `json:"user,omitempty"`
 }
 
 // SearchResult represents single result from search API
 type SearchResult struct {
 	Document int     `json:"document"`
+	Metadata *string `json:"metadata,omitempty"`
+	Object   string  `json:"object"`
 	Score    float32 `json:"score"`
+	Text     string  `json:"text"`
 }
 
 // SearchResponse represents a response structure for search API
