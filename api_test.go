@@ -43,8 +43,11 @@ func TestAPI(t *testing.T) {
 		t.Fatalf("CreateCompletion error: %v", err)
 	}
 
+	d1 := "White House"
+	d2 := "hospital"
+	d3 := "school"
 	searchReq := SearchRequest{
-		Documents: []string{"White House", "hospital", "school"},
+		Documents: []*string{&d1, &d2, &d3},
 		Query:     "the president",
 	}
 	_, err = c.Search(ctx, "ada", searchReq)
